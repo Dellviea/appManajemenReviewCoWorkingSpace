@@ -87,7 +87,6 @@ func cariByID(id int) int {
 	return -1
 }
 
-// Pencarian Sequential by Nama
 func sequentialSearchByNama(nama string) int {
 	for k := 0; k < jumlahData; k++ {
 		if dataCoWorkSpace[k].Nama == nama {
@@ -97,7 +96,6 @@ func sequentialSearchByNama(nama string) int {
 	return -1
 }
 
-// Sorting Lokasi Descending (buat ngebantu Binary Search Lokasi) BAGIAN C
 func sortByLokasiDescending() {
 	var idx int
 	var temp CoWorkSpace
@@ -115,7 +113,6 @@ func sortByLokasiDescending() {
 	}
 }
 
-// Binary Search by Lokasi Descending
 func binarySearchByLokasiDescending(lokasi string) int {
 	sortByLokasiDescending()
 	left, right := 0, jumlahData-1
@@ -132,7 +129,6 @@ func binarySearchByLokasiDescending(lokasi string) int {
 	return -1
 }
 
-// Pengurutan Selection Sort by Harga Descending BAGIAN D
 func selectionSortHargaDescending() {
 	var idx int
 	var temp CoWorkSpace
@@ -150,10 +146,8 @@ func selectionSortHargaDescending() {
 	}
 }
 
-// Pengurutan Insertion Sort by Rating Descending
 func insertionSortRatingDescending() {
 	var temp CoWorkSpace
-
 	for pass := 1; pass <= jumlahData-1; pass++ {
 		i := pass
 		temp = dataCoWorkSpace[pass]
