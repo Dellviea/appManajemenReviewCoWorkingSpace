@@ -88,7 +88,8 @@ func cariByID(id int) int {
 }
 
 func sequentialSearchByNama(nama string) int {
-	for k := 0; k < jumlahData; k++ {
+	var k int
+for k = 0; k < jumlahData; k++ {
 		if dataCoWorkSpace[k].Nama == nama {
 			return k
 		}
@@ -97,12 +98,11 @@ func sequentialSearchByNama(nama string) int {
 }
 
 func sortByLokasiDescending() {
-	var idx int
+	var idx, i, pass int
 	var temp CoWorkSpace
-
-	for pass := 1; pass <= jumlahData-1; pass++ {
+	for pass = 1; pass <= jumlahData-1; pass++ {
 		idx = pass - 1
-		for i := pass; i < jumlahData; i++ {
+		for i = pass; i < jumlahData; i++ {
 			if dataCoWorkSpace[i].Lokasi > dataCoWorkSpace[idx].Lokasi {
 				idx = i
 			}
@@ -130,12 +130,11 @@ func binarySearchByLokasiDescending(lokasi string) int {
 }
 
 func selectionSortHargaDescending() {
-	var idx int
+	var idx, pass, i int
 	var temp CoWorkSpace
-
-	for pass := 1; pass <= jumlahData-1; pass++ {
+	for pass = 1; pass <= jumlahData-1; pass++ {
 		idx = pass - 1
-		for i := pass; i < jumlahData; i++ {
+		for i = pass; i < jumlahData; i++ {
 			if dataCoWorkSpace[i].Harga > dataCoWorkSpace[idx].Harga {
 				idx = i
 			}
@@ -148,8 +147,9 @@ func selectionSortHargaDescending() {
 
 func insertionSortRatingDescending() {
 	var temp CoWorkSpace
-	for pass := 1; pass <= jumlahData-1; pass++ {
-		i := pass
+	var i, pass int
+for pass = 1; pass <= jumlahData-1; pass++ {
+		i = pass
 		temp = dataCoWorkSpace[pass]
 		for i > 0 && temp.Rating > dataCoWorkSpace[i-1].Rating {
 			dataCoWorkSpace[i] = dataCoWorkSpace[i-1]
